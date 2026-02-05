@@ -1,0 +1,56 @@
+# DVC Pipeline Configuration
+# Data versioning and pipeline orchestration
+
+stages:
+  # Stage 1: Prepare knowledge base data
+  prepare_knowledge_base:
+    cmd: python scripts/prepare_data.py
+    deps:
+      - data/knowledge_base/
+    outs:
+      - data/processed/knowledge_base.json:
+          cache: true
+    metrics:
+      - data/processed/data_stats.json:
+          cache: false
+
+  # Stage 2: Generate embeddings
+  generate_embeddings:
+    cmd: python scripts/generate_embeddings.py
+    deps:
+      - data/processed/knowledge_base.json
+    params:
+      - embedding_model
+      - embedding_dimensions
+    outs:
+      - data/embeddings/:
+          cache: true
+    metrics:
+      - data/embeddings/embedding_stats.json:
+          cache: false
+
+  # Stage 3: Build vector index
+  build_index:
+    cmd: python scripts/build_index.py
+    deps:
+      - data/embeddings/
+    outs:
+      - data/index/:
+          cache: true
+
+  # Stage 4: Run evaluation
+  evaluate:
+    cmd: python mlops/pipelines/evaluation.py
+    deps:
+      - data/index/
+      - data/evaluations/test_set.json
+    metrics:
+      - mlops/experiments/evaluation_results.json:
+          cache: false
+    plots:
+      - mlops/experiments/quality_metrics.csv:
+          x: timestamp
+          y: overall_score
+
+# Parameters for pipeline stages
+# Stored in params.yaml

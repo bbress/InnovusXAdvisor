@@ -1,0 +1,52 @@
+[
+  {
+    "id": "kb-010",
+    "title": "Strategic Partnership Framework",
+    "category": "partnerships",
+    "industry": "general",
+    "content": "Strategic partnerships can accelerate growth by providing access to customers, capabilities, and credibility that would take years to build organically. Key partnership types: (1) Distribution partnerships - leveraging partner channels to reach customers; (2) Technology partnerships - integrating complementary technologies; (3) Co-development partnerships - jointly building new products; (4) Strategic alliances - long-term collaboration across multiple dimensions. Partnership success factors: aligned incentives, clear governance, executive sponsorship, dedicated resources, and measurable outcomes. Common pitfalls: misaligned expectations, insufficient integration effort, and over-dependence on single partner.",
+    "tags": ["partnerships", "alliances", "strategy", "growth"],
+    "source": "Partnership Strategy Guide",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-011",
+    "title": "Channel Partner Program Design",
+    "category": "partnerships",
+    "industry": "saas",
+    "content": "Effective channel partner programs for SaaS companies include: (1) Partner tiers (Silver/Gold/Platinum) with increasing benefits and requirements; (2) Partner portal with deal registration, training, marketing resources; (3) Margin structure that rewards partner investment (20-40% for resellers, 10-20% for referrals); (4) Certification programs to ensure partner competency; (5) Co-marketing funds and lead sharing. Program evolution: Start with referral program, add reseller tier as market matures, consider white-label for high-volume partners. Measure: partner-sourced revenue, partner satisfaction, time-to-productivity.",
+    "tags": ["channel", "partners", "program", "saas", "reseller"],
+    "source": "Channel Excellence Playbook",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-012",
+    "title": "Technology Integration Partnerships",
+    "category": "partnerships",
+    "industry": "technology",
+    "content": "Technology integration partnerships create value through combined solutions. Key considerations: (1) API strategy - well-documented, stable APIs enable partner integrations; (2) Integration marketplace - showcase partner integrations, drive discovery; (3) Technical partnership tiers - certified integrations vs. community connectors; (4) Joint solution selling - combined go-to-market for integrated solutions. Success metrics: integration adoption rates, joint deals closed, customer retention impact. Build vs. partner decision: partner when capability is non-core, partner has superior solution, or speed-to-market is critical.",
+    "tags": ["technology", "integration", "api", "marketplace"],
+    "source": "Tech Partnership Guide",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-013",
+    "title": "Enterprise Partnership Negotiations",
+    "category": "partnerships",
+    "industry": "enterprise",
+    "content": "Negotiating enterprise partnerships requires balancing value creation and capture. Key negotiation elements: (1) Scope definition - clear boundaries on products, markets, and activities; (2) Economic terms - revenue sharing, minimum commitments, investment requirements; (3) Exclusivity - carefully evaluate trade-offs of exclusive arrangements; (4) Governance - decision rights, escalation paths, review cadence; (5) Term and termination - duration, renewal conditions, exit rights. Preparation: understand partner's strategic priorities, identify BATNA, model various scenarios. Common structures: joint ventures for deep integration, licensing for IP monetization, distribution agreements for market access.",
+    "tags": ["negotiation", "enterprise", "contracts", "governance"],
+    "source": "Enterprise Deal Playbook",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-014",
+    "title": "Ecosystem Strategy for Platform Companies",
+    "category": "partnerships",
+    "industry": "technology",
+    "content": "Platform ecosystem strategy creates network effects through partner participation. Key elements: (1) Platform value proposition - what partners gain by participating; (2) Developer experience - APIs, SDKs, documentation, support; (3) Go-to-market support - marketplace visibility, co-marketing, lead sharing; (4) Economic model - fair value distribution that sustains partner investment; (5) Governance - rules that protect ecosystem health without stifling innovation. Ecosystem stages: seed (recruit anchor partners), grow (scale partner base), optimize (increase partner value). Metrics: partner count, partner revenue, platform GMV, partner NPS.",
+    "tags": ["platform", "ecosystem", "developer", "marketplace"],
+    "source": "Platform Strategy Guide",
+    "created_at": "2024-01-01"
+  }
+]

@@ -1,0 +1,24 @@
+# DVC Parameters
+# These parameters control the ML pipeline stages
+
+# Embedding configuration
+embedding_model: "text-embedding-3-small"
+embedding_dimensions: 1536
+
+# Chunking configuration
+chunk_size: 512
+chunk_overlap: 50
+
+# Retrieval configuration
+retrieval_k: 10
+rerank_k: 5
+
+# Model configuration
+primary_model: "gpt-4-turbo-preview"
+fallback_model: "claude-3-sonnet-20240229"
+temperature: 0.7
+max_tokens: 4096
+
+# Evaluation configuration
+evaluation_sample_size: 200
+quality_threshold: 0.80

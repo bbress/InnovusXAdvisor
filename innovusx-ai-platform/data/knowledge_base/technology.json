@@ -1,0 +1,52 @@
+[
+  {
+    "id": "kb-020",
+    "title": "Technology-Led Competitive Advantage",
+    "category": "technology",
+    "industry": "general",
+    "content": "Technology can create sustainable competitive advantages through: (1) Operational efficiency - automation, optimization, cost reduction; (2) Customer experience - personalization, convenience, engagement; (3) Data advantage - insights that improve decisions and predictions; (4) Network effects - platforms that increase in value with usage; (5) Innovation speed - faster iteration and time-to-market. Technology investment priorities should align with strategic differentiation. Build proprietary capabilities for core differentiators; buy/partner for non-core needs. Measure technology ROI through efficiency gains, revenue impact, and competitive positioning.",
+    "tags": ["technology", "competitive-advantage", "innovation", "digital"],
+    "source": "Digital Strategy Guide",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-021",
+    "title": "AI and Machine Learning Strategy",
+    "category": "technology",
+    "industry": "general",
+    "content": "AI/ML strategy for business value creation: (1) Use case identification - prioritize by impact and feasibility; (2) Data foundation - ensure data quality, accessibility, and governance; (3) Build vs. buy - use pre-built models/APIs for common tasks, build custom for differentiation; (4) Organizational capability - develop internal ML talent and literacy; (5) Responsible AI - establish ethics guidelines, bias monitoring, explainability. High-value AI applications: demand forecasting, personalization, fraud detection, process automation, customer service. Success factors: executive sponsorship, iterative approach, integration with business processes.",
+    "tags": ["ai", "machine-learning", "strategy", "data"],
+    "source": "AI Strategy Playbook",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-022",
+    "title": "Cloud and Infrastructure Modernization",
+    "category": "technology",
+    "industry": "general",
+    "content": "Cloud modernization strategies for digital transformation: (1) Lift and shift - quick migration with minimal changes; (2) Replatform - optimize for cloud during migration; (3) Refactor - redesign applications for cloud-native architecture; (4) Rebuild - create new cloud-native applications; (5) Replace - adopt SaaS alternatives. Migration approach depends on application criticality, technical debt, and business timeline. Key benefits: scalability, cost optimization, faster innovation, global reach. Considerations: security, compliance, vendor lock-in, skill requirements. Hybrid/multi-cloud strategies provide flexibility but add complexity.",
+    "tags": ["cloud", "infrastructure", "modernization", "migration"],
+    "source": "Cloud Strategy Guide",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-023",
+    "title": "API-First Architecture",
+    "category": "technology",
+    "industry": "technology",
+    "content": "API-first architecture enables business agility and ecosystem development: (1) Design principles - consistency, versioning, documentation, security; (2) Internal APIs - enable microservices, improve development speed; (3) Partner APIs - enable integrations, create ecosystem value; (4) Public APIs - platform strategy, developer community; (5) API management - gateway, rate limiting, analytics, monetization. Benefits: faster development, better partner integration, new revenue streams, improved customer experience. Implementation: start with internal APIs, evolve to partner APIs as ecosystem develops, consider public APIs for platform strategies.",
+    "tags": ["api", "architecture", "platform", "integration"],
+    "source": "API Strategy Guide",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-024",
+    "title": "Cybersecurity Strategy",
+    "category": "technology",
+    "industry": "general",
+    "content": "Comprehensive cybersecurity strategy framework: (1) Risk assessment - identify critical assets, threats, and vulnerabilities; (2) Defense in depth - multiple layers of security controls; (3) Zero trust architecture - verify everything, assume breach; (4) Security operations - monitoring, detection, response; (5) Governance - policies, training, compliance. Key capabilities: identity and access management, endpoint protection, network security, data protection, incident response. Investment priorities based on risk profile. Third-party risk management increasingly critical. Regular testing through penetration testing and red team exercises.",
+    "tags": ["security", "cybersecurity", "risk", "compliance"],
+    "source": "Security Strategy Guide",
+    "created_at": "2024-01-01"
+  }
+]

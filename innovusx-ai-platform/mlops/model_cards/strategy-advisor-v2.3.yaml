@@ -1,0 +1,224 @@
+# Model Card: Strategy Advisor v2.3
+
+model_name: strategy-advisor
+version: "2.3"
+created_date: "2024-01-15"
+last_updated: "2024-01-15"
+status: production
+
+# Model Details
+model_details:
+  description: >
+    RAG-based business strategy recommendation system that generates
+    personalized growth strategies based on company context, industry,
+    and business challenges.
+
+  architecture:
+    type: "RAG + Multi-Agent"
+    base_model: "GPT-4 Turbo"
+    embedding_model: "text-embedding-3-small"
+    components:
+      - "RAG Engine (hybrid retrieval)"
+      - "Research Agent"
+      - "Strategy Agent"
+      - "Compliance Agent"
+
+  input_format:
+    type: "JSON"
+    fields:
+      - name: "industry"
+        type: "enum"
+        required: true
+        description: "Industry vertical"
+      - name: "company_stage"
+        type: "enum"
+        required: true
+        description: "Company growth stage"
+      - name: "challenge"
+        type: "string"
+        required: true
+        description: "Business challenge or goal"
+      - name: "focus_area"
+        type: "enum"
+        required: false
+        description: "Preferred strategic focus"
+
+  output_format:
+    type: "JSON"
+    fields:
+      - name: "strategies"
+        type: "array"
+        description: "List of strategy recommendations"
+      - name: "quality_metrics"
+        type: "object"
+        description: "Quality scores"
+      - name: "metadata"
+        type: "object"
+        description: "Request metadata"
+
+# Intended Use
+intended_use:
+  primary_uses:
+    - "Business strategy recommendation"
+    - "Growth opportunity identification"
+    - "Market expansion planning"
+    - "Partnership strategy development"
+
+  intended_users:
+    - "Business executives"
+    - "Strategy consultants"
+    - "Startup founders"
+    - "Growth teams"
+
+  out_of_scope:
+    - "Financial investment advice"
+    - "Legal guidance"
+    - "Personal career decisions"
+    - "Medical or health recommendations"
+
+# Training Data
+training_data:
+  description: "Curated business strategy knowledge base"
+  size: "847 documents"
+  sources:
+    - "Business case studies"
+    - "Industry analysis reports"
+    - "Growth strategy frameworks"
+    - "Market expansion guides"
+    - "Partnership best practices"
+
+  preprocessing:
+    chunking: "512 tokens with 50 token overlap"
+    embedding: "OpenAI text-embedding-3-small (1536 dimensions)"
+
+  data_collection:
+    method: "Manual curation and review"
+    date_range: "2020-2024"
+    refresh_frequency: "Quarterly"
+
+# Evaluation
+evaluation:
+  metrics:
+    relevance:
+      score: 0.89
+      description: "Response addresses the query"
+    groundedness:
+      score: 0.94
+      description: "Claims supported by sources"
+    coherence:
+      score: 0.91
+      description: "Logical flow and clarity"
+    actionability:
+      score: 0.85
+      description: "Specific, implementable advice"
+
+  test_set:
+    size: 200
+    description: "Diverse business scenarios across industries"
+
+  evaluation_date: "2024-01-14"
+
+  benchmarks:
+    - name: "Internal Quality Benchmark"
+      score: 0.89
+      threshold: 0.80
+    - name: "Latency P99"
+      score: "2.1s"
+      threshold: "3.0s"
+
+# Performance
+performance:
+  latency:
+    p50: "0.8s"
+    p99: "2.1s"
+    target: "3.0s"
+
+  throughput: "100 requests/second"
+
+  cost:
+    average_per_request: "$0.04"
+    tokens_per_request: 850
+
+# Ethical Considerations
+ethical_considerations:
+  bias_evaluation:
+    description: >
+      Tested across industries, company sizes, and geographic regions
+      to ensure consistent quality and no systematic bias.
+    results:
+      industry_fairness: 0.98
+      size_fairness: 0.97
+      geographic_fairness: 0.96
+
+  limitations:
+    - "May not cover niche or emerging industries"
+    - "Recommendations are general guidance, not specific advice"
+    - "Best suited for English-language queries"
+    - "Knowledge cutoff based on training data date"
+
+  risks:
+    - risk: "Over-reliance on AI recommendations"
+      mitigation: "Clear disclaimers and human oversight recommendation"
+    - risk: "Outdated market information"
+      mitigation: "Regular knowledge base updates and date warnings"
+    - risk: "Generic recommendations"
+      mitigation: "Context-aware personalization and follow-up questions"
+
+  fairness_testing:
+    method: "Demographic parity across input categories"
+    frequency: "Weekly automated checks"
+
+# Deployment
+deployment:
+  environment: "Kubernetes on GCP"
+  scaling: "Horizontal pod autoscaling (3-10 replicas)"
+  regions:
+    - "us-central1"
+
+  monitoring:
+    - "Prometheus metrics"
+    - "Grafana dashboards"
+    - "PagerDuty alerting"
+
+  rollback_procedure: "Automatic rollback on error rate > 1%"
+
+# Governance
+governance:
+  owner: "AI Platform Team"
+  review_frequency: "Monthly"
+
+  compliance:
+    audit_logging: "100% coverage"
+    pii_handling: "Detection and redaction enabled"
+    data_retention: "90 days for logs, 30 days for outputs"
+
+  access_control:
+    authentication: "API key required"
+    rate_limiting: "60 requests/minute default"
+
+# Version History
+version_history:
+  - version: "2.3"
+    date: "2024-01-15"
+    changes:
+      - "Improved retrieval with hybrid search"
+      - "Added compliance agent"
+      - "Enhanced action step generation"
+
+  - version: "2.2"
+    date: "2023-12-01"
+    changes:
+      - "Added multi-agent orchestration"
+      - "Improved quality metrics"
+
+  - version: "2.1"
+    date: "2023-10-15"
+    changes:
+      - "Initial RAG implementation"
+      - "Basic strategy generation"
+
+# Contact
+contact:
+  team: "AI Platform Team"
+  email: "ai-platform@innovus-x.com"
+  documentation: "https://docs.innovus-x.com/ai-platform"

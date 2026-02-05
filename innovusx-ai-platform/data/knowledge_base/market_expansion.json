@@ -1,0 +1,52 @@
+[
+  {
+    "id": "kb-001",
+    "title": "Phased Market Entry Framework",
+    "category": "market_expansion",
+    "industry": "general",
+    "content": "Phased market entry is a systematic approach to geographic expansion that minimizes risk while maximizing learning opportunities. The framework consists of four stages: (1) Market Assessment - evaluating market size, competition, regulatory environment, and customer needs; (2) Pilot Market Selection - choosing an initial market that offers the best combination of opportunity and manageable complexity; (3) Soft Launch - entering with limited resources to validate assumptions and gather feedback; (4) Scale and Expand - using learnings to optimize the model before rolling out to additional markets. Key success factors include local partnerships, regulatory compliance, cultural adaptation, and iterative learning.",
+    "tags": ["market-entry", "expansion", "international", "strategy"],
+    "source": "InnovusX Strategy Guide",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-002",
+    "title": "European Market Entry for FinTech",
+    "category": "market_expansion",
+    "industry": "fintech",
+    "content": "European market entry for fintech companies requires careful navigation of regulatory frameworks. Key considerations include: (1) PSD2 compliance for payment services; (2) GDPR for data protection; (3) Country-specific licensing requirements (FCA in UK, BaFin in Germany, ACPR in France); (4) Anti-money laundering (AML) and Know Your Customer (KYC) requirements. Recommended approach: Start with UK or Ireland as English-speaking markets with clear regulatory frameworks, then expand to EU markets. Consider regulatory sandbox programs to test new products. Partner with local banks for faster market access.",
+    "tags": ["fintech", "europe", "regulation", "compliance", "PSD2", "GDPR"],
+    "source": "FinTech Expansion Playbook",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-003",
+    "title": "APAC Market Expansion Strategies",
+    "category": "market_expansion",
+    "industry": "general",
+    "content": "Asia-Pacific market expansion requires understanding diverse markets with varying maturity levels. Key strategies: (1) Singapore as regional hub - business-friendly environment, strong IP protection, gateway to Southeast Asia; (2) Japan - large market but requires significant localization and long sales cycles; (3) Australia - English-speaking market with strong regulatory environment, good testing ground; (4) Southeast Asia (Indonesia, Vietnam, Thailand) - high growth potential but fragmented markets requiring local partnerships. Critical success factors: local talent, cultural adaptation, mobile-first approach, and patience with relationship building.",
+    "tags": ["apac", "asia", "singapore", "japan", "international"],
+    "source": "APAC Market Guide",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-004",
+    "title": "Go-to-Market Channel Strategy",
+    "category": "market_expansion",
+    "industry": "saas",
+    "content": "Effective go-to-market channels for SaaS market expansion: (1) Direct sales - best for enterprise customers, requires local sales team; (2) Partner channels - leverage existing relationships, faster market access, shared revenue; (3) Digital/PLG - product-led growth, lower CAC, requires strong product and self-service capabilities; (4) Marketplace presence - app stores, AWS/Azure marketplaces, existing customer base access. Channel selection factors: deal size, sales cycle, customer preference, partner ecosystem strength. Multi-channel approach often most effective, with emphasis shifting as market matures.",
+    "tags": ["gtm", "channels", "sales", "partnerships", "saas"],
+    "source": "SaaS Growth Handbook",
+    "created_at": "2024-01-01"
+  },
+  {
+    "id": "kb-005",
+    "title": "Market Entry Risk Assessment Framework",
+    "category": "market_expansion",
+    "industry": "general",
+    "content": "Comprehensive risk assessment for market entry decisions should evaluate: (1) Political risk - government stability, regulatory predictability, trade policies; (2) Economic risk - currency volatility, inflation, economic growth trajectory; (3) Competitive risk - incumbent strength, barriers to entry, market saturation; (4) Operational risk - talent availability, infrastructure quality, supply chain reliability; (5) Legal risk - intellectual property protection, contract enforcement, dispute resolution. Risk mitigation strategies: phased investment, local partnerships, political risk insurance, currency hedging, and maintaining operational flexibility.",
+    "tags": ["risk", "assessment", "market-entry", "framework"],
+    "source": "Risk Management Guide",
+    "created_at": "2024-01-01"
+  }
+]

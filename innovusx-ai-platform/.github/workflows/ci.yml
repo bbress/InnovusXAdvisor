@@ -1,0 +1,164 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  PYTHON_VERSION: "3.11"
+  NODE_VERSION: "20"
+
+jobs:
+  # API Tests
+  api-test:
+    name: API Tests
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: innovusx_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:7
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+          cache-dependency-path: api/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          cd api
+          pip install -r requirements.txt
+          pip install pytest pytest-asyncio pytest-cov httpx
+
+      - name: Run linting
+        run: |
+          cd api
+          pip install ruff
+          ruff check app/
+
+      - name: Run type checking
+        run: |
+          cd api
+          pip install mypy
+          mypy app/ --ignore-missing-imports || true
+
+      - name: Run tests
+        env:
+          DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/innovusx_test
+          REDIS_URL: redis://localhost:6379/0
+          OPENAI_API_KEY: test-key
+          ANTHROPIC_API_KEY: test-key
+        run: |
+          cd api
+          pytest tests/ -v --cov=app --cov-report=xml --cov-report=term
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: api/coverage.xml
+          flags: api
+          name: api-coverage
+
+  # Widget Tests
+  widget-test:
+    name: Widget Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: widget/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd widget
+          npm ci
+
+      - name: Run linting
+        run: |
+          cd widget
+          npm run lint || true
+
+      - name: Run type checking
+        run: |
+          cd widget
+          npm run typecheck || true
+
+      - name: Build
+        run: |
+          cd widget
+          npm run build
+
+  # Security Scan
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          severity: 'CRITICAL,HIGH'
+          exit-code: '0'
+
+      - name: Run Bandit security linter
+        run: |
+          pip install bandit
+          bandit -r api/app/ -ll || true
+
+  # Documentation Check
+  docs-check:
+    name: Documentation Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check documentation exists
+        run: |
+          test -f innovusx-ai-platform/README.md
+          test -f innovusx-ai-platform/docs/ARCHITECTURE.md
+          test -f innovusx-ai-platform/docs/AI_ML_STRATEGY.md
+          test -f innovusx-ai-platform/docs/MLOPS_PRACTICES.md
+          test -f innovusx-ai-platform/docs/GOVERNANCE.md
+
+      - name: Validate markdown
+        run: |
+          npm install -g markdownlint-cli
+          markdownlint innovusx-ai-platform/**/*.md || true
